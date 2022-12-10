@@ -30,12 +30,11 @@ interface VideoDao
     fun insertAll( videos: List<DatabaseVideo>)
 }
 
-abstract class VideosDatabase: RoomDatabase() {
     @Database(entities = [DatabaseVideo::class], version = 1)
     abstract class VideosDatabase: RoomDatabase() {
         abstract val videoDao: VideoDao
     }
-}
+
 
 private lateinit var INSTANCE: VideosDatabase
 
